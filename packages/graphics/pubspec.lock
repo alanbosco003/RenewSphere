@@ -73,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.8"
+  cupertino_icons:
+    dependency: transitive
+    description:
+      name: cupertino_icons
+      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   dbus:
     dependency: transitive
     description:
@@ -200,6 +208,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  native_shared_preferences:
+    dependency: transitive
+    description:
+      name: native_shared_preferences
+      sha256: "628e345f79b535138223a32dc8674920f1e828c3917b75c2f60014f8a3e6adc9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
   nm:
     dependency: transitive
     description:
@@ -359,6 +375,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  shared_preferences_macos:
+    dependency: transitive
+    description:
+      name: shared_preferences_macos
+      sha256: "81b6a60b2d27020eb0fc41f4cebc91353047309967901a79ee8203e40c42ed46"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   shared_preferences_platform_interface:
     dependency: transitive
     description:

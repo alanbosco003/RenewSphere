@@ -21,9 +21,9 @@ class GraphicsStringConsts {
   static const descriptionNotFound = 'Description Not Found';
   static const noDataFound = 'No Data Found!!';
   static const logIn = 'Log In';
-  static const gold = 'G O L D ';
-  static const loans = 'L O A N S';
-  static const platforForLendingMoney = 'A platform built for lending money';
+  static const renew = 'RENEW ';
+  static const sphere = 'SPHERE';
+  static const platforForGoGreen = 'Gaming for a Greener Tomorrow';
   static const loginWitgEmail = 'Login with Email';
   static const login = 'Login';
   static const saveChanges = 'Save Changes';

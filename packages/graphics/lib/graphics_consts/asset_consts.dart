@@ -4,6 +4,13 @@ class AssetConsts {
   static const _logoPath = 'assets/logo';
   static const _imagePath = 'assets/images';
   static const _iconPath = 'assets/icons';
+
+  static const imageBird = '$_imagePath/bird_login_page.png';
+  static const imageSquid = '$_imagePath/jellyFish.png';
+  static const imagePlant = '$_imagePath/plant_login.png';
+  static const imageTiger = '$_imagePath/tiger_login.png';
+  static const googleLogo = '$_logoPath/google_logo.png';
+  static const appleLogo = '$_logoPath/apple_logo.png';
   static const showPassword = '$_iconPath/showPassword.svg';
   static const hidePassword = '$_iconPath/hidePassword.svg';
   static const loginInitialPageGold = '$_imagePath/login_page_gold.png';

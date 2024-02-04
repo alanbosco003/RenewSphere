@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:graphics/graphics_consts/asset_consts.dart';
+import 'package:graphics/graphics_consts/graphics_text_style_consts.dart';
 
 class CarouselSliderWidget extends StatefulWidget {
   final List<CarouselItem> items;
@@ -9,17 +9,17 @@ class CarouselSliderWidget extends StatefulWidget {
   final double? widthRatio;
 
   const CarouselSliderWidget({
-    super.key,
+    Key? key,
     required this.items,
     this.heightRatio,
     this.widthRatio,
-  });
+  }) : super(key: key);
 
   @override
-  _CarouselSliderWidgetState createState() => _CarouselSliderWidgetState();
+  CarouselSliderWidgetState createState() => CarouselSliderWidgetState();
 }
 
-class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
+class CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   late PageController _pageController;
   late Timer _timer;
   int _currentIndex = 0;
@@ -56,64 +56,114 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   @override
   Widget build(BuildContext context) {
     double height =
-        widget.heightRatio ?? MediaQuery.of(context).size.height * 0.15;
+        widget.heightRatio ?? MediaQuery.of(context).size.height * 0.40;
     double width =
-        widget.widthRatio ?? MediaQuery.of(context).size.width * 0.85;
+        widget.widthRatio ?? MediaQuery.of(context).size.width * 0.95;
 
-    return SizedBox(
-      height: height,
-      width: width,
-      child: PageView.builder(
-        controller: _pageController,
-        itemCount: widget.items.length,
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        itemBuilder: (context, index) {
-          final item = widget.items[index];
-          return buildCarouselItem(item);
-        },
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(8),
+            ),
+          ),
+          height: height,
+          width: width,
+          child: Stack(
+            children: [
+              PageView.builder(
+                controller: _pageController,
+                itemCount: widget.items.length,
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                itemBuilder: (context, index) {
+                  final item = widget.items[index];
+                  return buildCarouselItem(item, height, width);
+                },
+              ),
+              Positioned(
+                bottom: 10,
+                left: 0,
+                right: 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    widget.items.length,
+                    (index) => _buildIndicator(index),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
-  Widget buildCarouselItem(CarouselItem item) {
+  Widget buildCarouselItem(CarouselItem item, double height, double width) {
     return GestureDetector(
       onTap: () {
         item.onPress();
       },
-      child: Container(
-        height: widget.heightRatio,
-        width: widget.widthRatio,
-        // Customize your item layout here
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            item.isAssetImage
-                ? Image.asset(
-                    item.image,
-                    package: AssetConsts.package,
-                    fit: BoxFit.cover,
-                  )
-                : Image.network(
-                    item.image,
-                    fit: BoxFit.cover,
-                  ),
-            const SizedBox(height: 10),
-            Text(
-              item.title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          Container(
+            margin: const EdgeInsets.only(right: 10, left: 10),
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(8),
+              ),
+              image: DecorationImage(
+                image: item.isAssetImage
+                    ? AssetImage(
+                        item.image,
+                        package: AssetConsts.package,
+                      )
+                    : NetworkImage(item.image) as ImageProvider,
+                fit: BoxFit.cover,
+              ),
             ),
-            const SizedBox(height: 5),
-            Text(
-              item.subtitle,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  item.title,
+                  style: GraphicsTextStylesConst.textStyleWhite_13_400,
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  item.subtitle,
+                  style: GraphicsTextStylesConst.textStyleWhite_14_500,
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildIndicator(int index) {
+    return Container(
+      width: 8,
+      height: 8,
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: _currentIndex == index ? Colors.white : Colors.grey,
       ),
     );
   }

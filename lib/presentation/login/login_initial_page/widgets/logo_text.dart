@@ -3,8 +3,8 @@ import 'package:graphics/graphics_consts/graphics_string_consts.dart';
 import 'package:graphics/graphics_consts/graphics_text_style_consts.dart';
 import 'package:graphics/utils/dimension/ui_size_utils.dart';
 
-class GoldLoanTitleText extends StatelessWidget {
-  const GoldLoanTitleText({super.key});
+class LogoTitleText extends StatelessWidget {
+  const LogoTitleText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class GoldLoanTitleText extends StatelessWidget {
             style: GraphicsTextStylesConst.textStyleGold_20_700,
             children: [
               TextSpan(
-                  text: GraphicsStringConsts.gold,
+                  text: GraphicsStringConsts.renew,
                   style: GraphicsTextStylesConst.textStyleGold_20_700),
               TextSpan(
-                  text: GraphicsStringConsts.loans,
+                  text: GraphicsStringConsts.sphere,
                   style: GraphicsTextStylesConst.textStyleBlack_20_700),
             ],
           ),

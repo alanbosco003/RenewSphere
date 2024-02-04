@@ -71,23 +71,23 @@ class _GradientElevatedButtonState extends State<GradientElevatedButton> {
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
-              BoxShadow(
-                color:
-                    const Color.fromARGB(255, 255, 188, 136).withOpacity(0.7),
-                spreadRadius: 6,
-                blurRadius: 19,
-                offset: const Offset(2, 8), // changes position of shadow
-              ),
+              // BoxShadow(
+              //   color: Color.fromARGB(255, 156, 255, 199).withOpacity(0.7),
+              //   spreadRadius: 6,
+              //   blurRadius: 19,
+              //   offset: const Offset(2, 8), // changes position of shadow
+              // ),
             ],
             gradient: isDisabled
                 ? LinearGradient(colors: [
-                    widget.activeColor ?? const Color(0xFFFC9A4E),
-                    widget.activeColor ?? const Color(0xFFFF7000),
+                    widget.activeColor ?? const Color(0xFF006E2F),
+                    widget.activeColor ?? const Color.fromARGB(255, 6, 155, 71),
                   ])
                 : widget.activeGradient ??
                     LinearGradient(colors: [
-                      widget.activeColor ?? const Color(0xFFFC9A4E),
-                      widget.activeColor ?? const Color(0xFFFF7000),
+                      widget.activeColor ?? const Color(0xFF006E2F),
+                      widget.activeColor ??
+                          const Color.fromARGB(255, 6, 155, 71),
                     ]),
             borderRadius: widget.borderRadius,
           ),
@@ -98,14 +98,14 @@ class _GradientElevatedButtonState extends State<GradientElevatedButton> {
           child: DefaultTextStyle(
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: Colors.white,
-                    fontSize: UiSizeUtils.getFontSize(14),
+                    fontSize: UiSizeUtils.getFontSize(12),
                     fontFamily: 'OpenSans',
-                    fontWeight: FontWeight.w600) ??
+                    fontWeight: FontWeight.w400) ??
                 TextStyle(
-                    fontSize: UiSizeUtils.getFontSize(14),
+                    fontSize: UiSizeUtils.getFontSize(12),
                     color: Colors.white,
                     fontFamily: 'OpenSans',
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w400),
             child: (() {
               final txtWidget = Text(widget.text, textScaleFactor: 1.14286);
               if (isLoading) {

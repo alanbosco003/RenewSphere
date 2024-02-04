@@ -4,15 +4,15 @@ import 'package:graphics/utils/dimension/ui_size_utils.dart';
 
 class GraphicsTextStylesConst {
   static TextStyle textStyleBlack_20_700 = TextStyle(
-    fontSize: UiSizeUtils.getFontSize(20),
+    fontSize: UiSizeUtils.getFontSize(24),
     fontWeight: FontWeight.w700,
     color: GraphicsColorConsts.black,
     fontFamily: 'OpenSans',
   );
   static TextStyle textStyleGold_20_700 = TextStyle(
-    fontSize: UiSizeUtils.getFontSize(20),
+    fontSize: UiSizeUtils.getFontSize(24),
     fontWeight: FontWeight.w700,
-    color: GraphicsColorConsts.gold,
+    color: GraphicsColorConsts.green,
     fontFamily: 'OpenSans',
   );
 
@@ -20,6 +20,26 @@ class GraphicsTextStylesConst {
     fontSize: UiSizeUtils.getFontSize(12),
     fontWeight: FontWeight.w400,
     color: GraphicsColorConsts.black,
+    fontFamily: 'OpenSans',
+  );
+
+  static TextStyle textStyleBlack_11_400 = TextStyle(
+    fontSize: UiSizeUtils.getFontSize(11),
+    fontWeight: FontWeight.w400,
+    color: GraphicsColorConsts.black,
+    fontFamily: 'OpenSans',
+  );
+  static TextStyle textStyleWhite_13_400 = TextStyle(
+    fontSize: UiSizeUtils.getFontSize(13),
+    fontWeight: FontWeight.w400,
+    color: GraphicsColorConsts.white,
+    fontFamily: 'OpenSans',
+  );
+
+  static TextStyle textStyleWhite_14_500 = TextStyle(
+    fontSize: UiSizeUtils.getFontSize(14),
+    fontWeight: FontWeight.w500,
+    color: GraphicsColorConsts.white,
     fontFamily: 'OpenSans',
   );
 
@@ -126,4 +146,6 @@ class GraphicsTextStylesConst {
   );
 
   // Add more text styles as needed
+
+  // GOOGLE FONTS
 }

@@ -11,6 +11,7 @@ class GraphicsColorConsts {
 
   static const white = Color(0xFFFFFFFF);
   static const gold = Color(0xffFFB816);
+  static const green = Color(0xff006E2F);
   static const grey = Color(0xff484848);
   static const black = Color(0xff303030);
   static const selectedOptionBorder = Color(0xff0A62B2);

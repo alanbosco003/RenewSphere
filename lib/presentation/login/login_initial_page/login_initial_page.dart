@@ -1,4 +1,6 @@
 import 'package:base_flutter/presentation/login/login_initial_page/controllers/login_initial_page.controller.dart';
+import 'package:base_flutter/presentation/login/login_initial_page/widgets/apple_button.dart';
+import 'package:base_flutter/presentation/login/login_initial_page/widgets/google_login_button.dart';
 import 'package:reactiv/views/reactive_state_widget.dart';
 
 import 'index.dart';
@@ -20,12 +22,19 @@ class LoginInitialScreen
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: 90),
           CarouselSlider(),
-          GoldLoanTitleText(),
-          GoldLoanSubtitleText(),
-          GoldLoanInitialScreenButton(),
+          LogoTitleText(),
+          LogoSubtitleText(),
           Spacer(),
-          LkBrandLogo()
+          GoogleLogin(),
+          SizedBox(height: 15),
+          AppleButton(),
+          SizedBox(height: 15),
+          EmailLoginInitialScreenButton(),
+          SizedBox(height: 25),
+          // Spacer(),
+          // LkBrandLogo()
         ],
       ),
     );

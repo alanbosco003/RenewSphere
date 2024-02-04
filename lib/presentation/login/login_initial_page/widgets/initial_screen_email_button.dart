@@ -6,9 +6,9 @@ import 'package:graphics/utils/dimension/ui_size_utils.dart';
 import 'package:graphics/widgets/buttons/gradent_button.dart';
 import 'package:reactiv/reactiv.dart';
 
-class GoldLoanInitialScreenButton
+class EmailLoginInitialScreenButton
     extends ReactiveStateWidget<LoginInitialPageController> {
-  const GoldLoanInitialScreenButton({super.key});
+  const EmailLoginInitialScreenButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class GoldLoanInitialScreenButton
           text: GraphicsStringConsts.loginWitgEmail,
           borderRadius: const BorderRadius.all(Radius.circular(5)),
           onPressed: () {
-            Routes.of(context).toLocationLoginFormModule();
-            controller.loginButtonHandler.initialLoginPageLogic();
+            Routes.of(context).toLocationBaseStructureModule();
+            // controller.loginButtonHandler.initialLoginPageLogic();
             // Add your login functionality here
           },
         ),

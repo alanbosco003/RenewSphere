@@ -16,6 +16,19 @@ class GraphicsTextStylesConst {
     fontFamily: 'OpenSans',
   );
 
+  static TextStyle textStyleBlack_11_600 = TextStyle(
+    fontSize: UiSizeUtils.getFontSize(11),
+    fontWeight: FontWeight.w600,
+    color: GraphicsColorConsts.black,
+    fontFamily: 'OpenSans',
+  );
+  static TextStyle textStyleBlack_11_300 = TextStyle(
+    fontSize: UiSizeUtils.getFontSize(11),
+    fontWeight: FontWeight.w300,
+    color: GraphicsColorConsts.black,
+    fontFamily: 'OpenSans',
+  );
+
   static TextStyle textStyleBlack_12_400 = TextStyle(
     fontSize: UiSizeUtils.getFontSize(12),
     fontWeight: FontWeight.w400,

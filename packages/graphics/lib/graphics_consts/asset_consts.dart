@@ -9,6 +9,8 @@ class AssetConsts {
   static const imageSquid = '$_imagePath/jellyFish.png';
   static const imagePlant = '$_imagePath/plant_login.png';
   static const imageTiger = '$_imagePath/tiger_login.png';
+  static const imageAppBar1 = '$_imagePath/appbar1.jpg';
+  static const imageAppBar2 = '$_imagePath/appbar2.jpg';
   static const googleLogo = '$_logoPath/google_logo.png';
   static const appleLogo = '$_logoPath/apple_logo.png';
   static const showPassword = '$_iconPath/showPassword.svg';

@@ -9,10 +9,10 @@ class BaseStructure extends ReactiveStateWidget<BaseStructureController> {
   }
 
   final List<Widget> pages = const [
-    Dashboard(),
-    Customer(),
-    Collateral(),
-    Loans()
+    Feeds(),
+    Explore(),
+    Game(),
+    Profile(),
   ];
 
   @override
